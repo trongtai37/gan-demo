@@ -1,0 +1,12 @@
+.arrow {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.container {
+  border: 2px solid #474444;
+  padding: 2px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: inset;
+}
