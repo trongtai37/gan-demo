@@ -6,7 +6,7 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 
 const PlayGround = () => {
   const [loading, setLoading] = React.useState(false);
-  const [output, setOutput] = React.useState(null);
+  // const [output, setOutput] = React.useState(null);
 
   const handleUpload = async (data) => {
     try {
@@ -21,7 +21,7 @@ const PlayGround = () => {
   return (
     <Row justify="space-around" align="middle">
       <Col span={11}>
-        <Uploader handleUpload={handleUpload} />
+        <Uploader handleUpload={handleUpload} loading={loading} />
       </Col>
       <Col span={2}>
         <ArrowRightOutlined className="arrow" />
@@ -39,7 +39,6 @@ const PlayGround = () => {
       </Col>
     </Row>
   );
-  return <Uploader />;
 };
 
 export default PlayGround;
