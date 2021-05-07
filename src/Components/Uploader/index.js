@@ -9,7 +9,6 @@ const { Option } = Select;
 const Uploader = (props) => {
   const { loading, handleUpload } = props;
   const [inputFile, setInputFile] = React.useState([]);
-  // const [maskFile, setMaskFile] = React.useState([]);
   const [modelType, setModelType] = React.useState(ModelTypes.CYCLE_GAN);
 
   return (

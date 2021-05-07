@@ -3,16 +3,21 @@ import "antd/dist/antd.css";
 import Uploader from "../Components/Uploader";
 import { Col, Image, Row } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { transformImage } from "../Services/upload";
 
 const PlayGround = () => {
   const [loading, setLoading] = React.useState(false);
-  // const [output, setOutput] = React.useState(null);
+  const [output, setOutput] = React.useState({});
 
   const handleUpload = async (data) => {
     try {
       setLoading(true);
-      console.log(data);
-      // setLoading(false)
+      const formData = new FormData();
+      formData.append("inputFile", data.inputFile);
+      formData.append("modelType", data.modelType);
+      const image = await transformImage(formData);
+      setOutput(image);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
     }
@@ -23,13 +28,13 @@ const PlayGround = () => {
       <Col span={11}>
         <Uploader handleUpload={handleUpload} loading={loading} />
       </Col>
-      <Col span={2}>
+      <Col span={2} className="playground__arrow">
         <ArrowRightOutlined className="arrow" />
       </Col>
       <Col span={11}>
         <Image
           width="90%"
-          src=""
+          src={output}
           fallback={
             true
               ? `${process.env.PUBLIC_URL}/loading.gif`

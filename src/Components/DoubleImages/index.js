@@ -32,7 +32,7 @@ const DoubleImages = ({ filename, modelType }) => {
       <Col span={11}>
         <Image width={180} src={ORIGIN_DIR + filename} />
       </Col>
-      <Col span={2}>
+      <Col span={2} className="double-image__arrow">
         <ArrowRightOutlined className="arrow" />
       </Col>
       <Col span={11}>

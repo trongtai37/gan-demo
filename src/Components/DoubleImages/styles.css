@@ -10,3 +10,13 @@
   border-radius: 5px;
   box-shadow: inset;
 }
+
+.container div {
+  display: flex;
+  justify-content: center;
+}
+
+.double-image__arrow {
+  display: flex;
+  justify-content: center;
+}
