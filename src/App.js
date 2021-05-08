@@ -1,16 +1,24 @@
 import "./App.css";
 import "antd/dist/antd.css";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Input } from "antd";
 import { Link } from "react-router-dom";
 import AppRoute from "./Routes";
 
 const { Header, Content, Footer } = Layout;
+const { Search } = Input;
 
 function App() {
   return (
     <Layout className="layout">
       <Header>
-        <div className="logo">{/* <img src={logo} /> */}</div>
+        <Search
+          className="header__ngrok-endpoint"
+          placeholder="Enter ngrok endpoint..."
+          allowClear
+          enterButton="Apply"
+          size="large"
+          onSearch={(value) => localStorage.setItem("ngrok-endpoint", value)}
+        />
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
             <Link to="/showcase">Showcase</Link>

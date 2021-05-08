@@ -31,3 +31,10 @@
   max-height: 640px;
   overflow-y: scroll;
 }
+
+.header__ngrok-endpoint {
+  position: absolute !important;
+  width: 400px !important;
+  right: 10px;
+  top: 10px;
+}

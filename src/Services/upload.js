@@ -1,9 +1,10 @@
 import axios from "axios";
 
-const API_ENDPOINT = "http://localhost:3000/api";
-const UPLOAD_ENDPOINT = `${API_ENDPOINT}/transform-image`;
+const getNgrokEndpoint = () =>
+  localStorage.getItem("ngrok-endpoint") || "http://f9770404ad74.ngrok.io";
 
 const transformImage = async (formData) => {
+  const UPLOAD_ENDPOINT = `${getNgrokEndpoint()}/api/transform-image`;
   const response = await axios.post(UPLOAD_ENDPOINT, formData, {
     headers: {
       "Content-Type": "multipart/form-data",

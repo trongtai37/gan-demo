@@ -17,7 +17,7 @@ const Uploader = (props) => {
         multiple={false}
         onRemove={() => setInputFile([])}
         beforeUpload={(file) => {
-          !inputFile.length && setInputFile((state) => [...state, file]);
+          setInputFile([file]);
           return false;
         }}
         fileList={inputFile}
@@ -43,7 +43,7 @@ const Uploader = (props) => {
         style={{ marginTop: 16 }}
         onClick={() =>
           handleUpload({
-            inputFile,
+            inputFile: inputFile[0],
             modelType,
           })
         }

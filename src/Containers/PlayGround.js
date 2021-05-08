@@ -13,7 +13,7 @@ const PlayGround = () => {
     try {
       setLoading(true);
       const formData = new FormData();
-      formData.append("inputFile", data.inputFile);
+      formData.append("file", data.inputFile);
       formData.append("modelType", data.modelType);
       const image = await transformImage(formData);
       setOutput(image);
@@ -33,6 +33,9 @@ const PlayGround = () => {
       </Col>
       <Col span={11}>
         <Image
+          style={{
+            marginTop: 20,
+          }}
           width="90%"
           src={output}
           fallback={
