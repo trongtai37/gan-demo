@@ -35,7 +35,11 @@ const Uploader = (props) => {
         }}
       >
         {inputPreview ? (
-          <img src={inputPreview} style={{ height: "65vh" }} />
+          <img
+            src={inputPreview}
+            style={{ height: "65vh" }}
+            alt="preview input"
+          />
         ) : (
           <>
             <p className="ant-upload-drag-icon">
