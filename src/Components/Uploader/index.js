@@ -57,8 +57,6 @@ const Uploader = (props) => {
         style={{ width: 240, marginRight: 20, marginTop: 20 }}
       >
         <Option value={ModelTypes.CYCLE_GAN}>Mô hình CycleGAN</Option>
-        <Option value={ModelTypes.UNIT}>Mô hình UNIT</Option>
-        <Option value={ModelTypes.MUNIT}>Mô hình MUINT</Option>
       </Select>
       <Button
         type="primary"
@@ -69,6 +67,7 @@ const Uploader = (props) => {
             modelType,
           })
         }
+        disabled={inputFile.length === 0}
       >
         {loading ? "Processing" : "Start Upload"}
       </Button>

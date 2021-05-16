@@ -33,10 +33,7 @@ const PlayGround = () => {
       </Col>
       <Col span={11}>
         <Image
-          style={{
-            marginTop: 20,
-          }}
-          width="90%"
+          width="80%"
           src={output}
           fallback={
             true

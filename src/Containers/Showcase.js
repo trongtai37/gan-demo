@@ -43,71 +43,9 @@ const Showcase = () => {
         })}
       </Panel>
       {/* UNIT */}
-      <Panel header="Kết quả mô hình UNIT" key="2">
-        {_.chunk(DEMO_IMAGES, 3).map((chunk, index) => {
-          return (
-            <Row key={index}>
-              <Col flex="1 1 400px">
-                {chunk[0] && (
-                  <DoubleImages
-                    filename={chunk[0]}
-                    modelType={ModelTypes.UNIT}
-                  />
-                )}
-              </Col>
-              <Col flex="1 1 400px">
-                {chunk[1] && (
-                  <DoubleImages
-                    filename={chunk[1]}
-                    modelType={ModelTypes.UNIT}
-                  />
-                )}
-              </Col>
-              <Col flex="1 1 400px">
-                {chunk[2] && (
-                  <DoubleImages
-                    filename={chunk[2]}
-                    modelType={ModelTypes.UNIT}
-                  />
-                )}
-              </Col>
-            </Row>
-          );
-        })}
-      </Panel>
+      <Panel header="Kết quả mô hình UNIT" key="2"></Panel>
       {/* MUNIT */}
-      <Panel header="Kết quả mô hình MUNIT" key="3">
-        {_.chunk(DEMO_IMAGES, 3).map((chunk, index) => {
-          return (
-            <Row key={index}>
-              <Col flex="1 1 400px">
-                {chunk[0] && (
-                  <DoubleImages
-                    filename={chunk[0]}
-                    modelType={ModelTypes.MUNIT}
-                  />
-                )}
-              </Col>
-              <Col flex="1 1 400px">
-                {chunk[1] && (
-                  <DoubleImages
-                    filename={chunk[1]}
-                    modelType={ModelTypes.MUNIT}
-                  />
-                )}
-              </Col>
-              <Col flex="1 1 400px">
-                {chunk[2] && (
-                  <DoubleImages
-                    filename={chunk[2]}
-                    modelType={ModelTypes.MUNIT}
-                  />
-                )}
-              </Col>
-            </Row>
-          );
-        })}
-      </Panel>
+      <Panel header="Kết quả mô hình MUNIT" key="3"></Panel>
     </Collapse>
   );
 };

@@ -1,8 +1,14 @@
 import axios from "axios";
 
-const getNgrokEndpoint = () =>
-  localStorage.getItem("ngrok-endpoint") || "http://f9770404ad74.ngrok.io";
+const getNgrokEndpoint = () => {
+  let endp =
+    localStorage.getItem("ngrok-endpoint") || "http://f9770404ad74.ngrok.io";
+  if (endp.startsWith("https")) {
+    return endp;
+  }
 
+  return "https" + endp.slice(4);
+};
 const transformImage = async (formData) => {
   const UPLOAD_ENDPOINT = `${getNgrokEndpoint()}/api/transform-image`;
   const response = await axios.post(UPLOAD_ENDPOINT, formData, {
